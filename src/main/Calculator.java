@@ -12,7 +12,6 @@ import java.util.regex.Pattern;
 public class Calculator {
 
     private final Map<String, Operation> operations = new HashMap<>();
-    private final Pattern operandPattern = Pattern.compile("[0-9]+[.]?[0-9]*");
 
     public Calculator() {
         operations.put("+", new Addition());
@@ -21,15 +20,7 @@ public class Calculator {
         operations.put("/", new Division());
     }
 
-    public boolean isValidOperand(String operand) {
-        return !operandPattern.matcher(operand).matches();
-    }
-
-    public BigDecimal calculate(BigDecimal operand1, String operation, BigDecimal operand2) {
-
-        if (isValidOperand(operand1.toPlainString()) || isValidOperand(operand2.toPlainString())) {
-            throw new IllegalArgumentException("Invalid operand");
-        }
+    public BigDecimal calculate(String operand1, String operation, String operand2) {
 
         Operation op = operations.get(operation);
         if (op == null) {

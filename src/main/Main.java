@@ -11,8 +11,8 @@ public class Main {
         System.out.print("Enter operand1, operation (+, -, *, /), operand2 : ");
         String[] inputs = scanner.nextLine().split(" ");
 
-        BigDecimal operand1 = new BigDecimal(inputs[0]);
-        BigDecimal operand2 = new BigDecimal(inputs[2]);
+        String operand1 = inputs[0].trim();
+        String operand2 = inputs[2].trim();
         String operation = inputs[1].trim();
 
         BigDecimal result = calculator.calculate(operand1, operation, operand2);
