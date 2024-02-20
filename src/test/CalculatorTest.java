@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
 
@@ -85,5 +86,51 @@ class CalculatorTest {
 
         // then
         assertEquals(result, BigDecimal.valueOf(-23.23));
+    }
+
+    @DisplayName("결과가 나누어 떨어지는 경우, 나눗셈 테스트")
+    @Test
+    void calculate_division_case1() {
+
+        // given
+        BigDecimal operand1 = BigDecimal.valueOf(5.5);
+        BigDecimal operand2 = BigDecimal.valueOf(1.1);
+        Division division = new Division();
+
+        // when
+        BigDecimal result = division.calculate(operand1, operand2);
+
+        // then
+        assertEquals(result, BigDecimal.valueOf(5));
+    }
+
+    @DisplayName("결과가 나누어 떨어지지 않는 경우, 나눗셈 테스트")
+    @Test
+    void calculate_division_case2() {
+
+        // given
+        BigDecimal operand1 = BigDecimal.valueOf(10);
+        BigDecimal operand2 = BigDecimal.valueOf(3);
+        Division division = new Division();
+
+        // when
+        BigDecimal result = division.calculate(operand1, operand2);
+
+        // then
+        assertEquals(result, BigDecimal.valueOf(3.333333333333333));
+    }
+
+    @DisplayName("operand2가 0인 경우, 나눗셈 테스트")
+    @Test
+    void calculate_division_case3() {
+
+        // given
+        BigDecimal operand1 = BigDecimal.valueOf(10);
+        BigDecimal operand2 = BigDecimal.valueOf(0);
+        Division division = new Division();
+
+        // when
+        // then
+        assertThrows(IllegalArgumentException.class, () -> division.calculate(operand1, operand2));
     }
 }
