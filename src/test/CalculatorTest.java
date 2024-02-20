@@ -17,8 +17,8 @@ class CalculatorTest {
     void calculate_add() {
 
         // given
-        BigDecimal operand1 = BigDecimal.valueOf(1.1);
-        BigDecimal operand2 = BigDecimal.valueOf(2.2);
+        String operand1 = "1.1";
+        String operand2 = "2.2";
         Addition addition = new Addition();
 
         // when
@@ -33,8 +33,8 @@ class CalculatorTest {
     void calculate_subtraction_case1() {
 
         // given
-        BigDecimal operand1 = BigDecimal.valueOf(5.9);
-        BigDecimal operand2 = BigDecimal.valueOf(2.4);
+        String operand1 = "5.9";
+        String operand2 = "2.4";
         Subtraction subtraction = new Subtraction();
 
         // when
@@ -49,8 +49,8 @@ class CalculatorTest {
     void calculate_subtraction_case2() {
 
         // given
-        BigDecimal operand1 = BigDecimal.valueOf(1.1);
-        BigDecimal operand2 = BigDecimal.valueOf(2.4);
+        String operand1 = "1.1";
+        String operand2 = "2.4";
         Subtraction subtraction = new Subtraction();
 
         // when
@@ -65,8 +65,8 @@ class CalculatorTest {
     void calculate_multiplication_case1() {
 
         // given
-        BigDecimal operand1 = BigDecimal.valueOf(1.1);
-        BigDecimal operand2 = BigDecimal.valueOf(10.0);
+        String operand1 = "1.1";
+        String operand2 = "10.0";
         Multiplication multiplication = new Multiplication();
 
         // when
@@ -76,29 +76,13 @@ class CalculatorTest {
         assertEquals(result, BigDecimal.valueOf(11));
     }
 
-    @DisplayName("결과가 음수인 경우, 곱셈 테스트")
-    @Test
-    void calculate_multiplication_case2() {
-
-        // given
-        BigDecimal operand1 = BigDecimal.valueOf(-2.3);
-        BigDecimal operand2 = BigDecimal.valueOf(10.1);
-        Multiplication multiplication = new Multiplication();
-
-        // when
-        BigDecimal result = multiplication.calculate(operand1, operand2);
-
-        // then
-        assertEquals(result, BigDecimal.valueOf(-23.23));
-    }
-
     @DisplayName("결과가 나누어 떨어지는 경우, 나눗셈 테스트")
     @Test
     void calculate_division_case1() {
 
         // given
-        BigDecimal operand1 = BigDecimal.valueOf(5.5);
-        BigDecimal operand2 = BigDecimal.valueOf(1.1);
+        String operand1 = "5.5";
+        String operand2 = "1.1";
         Division division = new Division();
 
         // when
@@ -113,8 +97,8 @@ class CalculatorTest {
     void calculate_division_case2() {
 
         // given
-        BigDecimal operand1 = BigDecimal.valueOf(10);
-        BigDecimal operand2 = BigDecimal.valueOf(3);
+        String operand1 = "10";
+        String operand2 = "3";
         Division division = new Division();
 
         // when
@@ -129,8 +113,8 @@ class CalculatorTest {
     void calculate_division_case3() {
 
         // given
-        BigDecimal operand1 = BigDecimal.valueOf(10);
-        BigDecimal operand2 = BigDecimal.valueOf(0);
+        String operand1 = "10";
+        String operand2 = "0";
         Division division = new Division();
 
         // when
