@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculatorTest {
 
+    @DisplayName("덧셈 테스트")
     @Test
     void calculate_add() {
 
@@ -52,5 +53,37 @@ class CalculatorTest {
 
         // then
         assertEquals(result, BigDecimal.valueOf(-1.3));
+    }
+
+    @DisplayName("결과가 양수인 경우, 곱셈 테스트")
+    @Test
+    void calculate_multiplication_case1() {
+
+        // given
+        BigDecimal operand1 = BigDecimal.valueOf(1.1);
+        BigDecimal operand2 = BigDecimal.valueOf(10.0);
+        Multiplication multiplication = new Multiplication();
+
+        // when
+        BigDecimal result = multiplication.calculate(operand1, operand2);
+
+        // then
+        assertEquals(result, BigDecimal.valueOf(11));
+    }
+
+    @DisplayName("결과가 음수인 경우, 곱셈 테스트")
+    @Test
+    void calculate_multiplication_case2() {
+
+        // given
+        BigDecimal operand1 = BigDecimal.valueOf(-2.3);
+        BigDecimal operand2 = BigDecimal.valueOf(10.1);
+        Multiplication multiplication = new Multiplication();
+
+        // when
+        BigDecimal result = multiplication.calculate(operand1, operand2);
+
+        // then
+        assertEquals(result, BigDecimal.valueOf(-23.23));
     }
 }
