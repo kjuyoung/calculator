@@ -23,6 +23,7 @@ public class Division implements Operation {
             throw new IllegalArgumentException("Cannot divide by zero");
         }
 
-        return new BigDecimal(operand1).divide(new BigDecimal(operand2), MathContext.DECIMAL64);
+        return new BigDecimal(operand1).divide(new BigDecimal(operand2), MathContext.DECIMAL64)
+                .stripTrailingZeros();
     }
 }

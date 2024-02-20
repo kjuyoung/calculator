@@ -17,6 +17,7 @@ public class Addition implements Operation {
             throw new IllegalArgumentException("Invalid operand");
         }
 
-        return new BigDecimal(operand1).add(new BigDecimal(operand2));
+        return new BigDecimal(operand1).add(new BigDecimal(operand2))
+                .stripTrailingZeros();
     }
 }

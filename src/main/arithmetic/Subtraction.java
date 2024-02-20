@@ -17,6 +17,7 @@ public class Subtraction implements Operation {
             throw new IllegalArgumentException("Invalid operand");
         }
 
-        return new BigDecimal(operand1).subtract(new BigDecimal(operand2));
+        return new BigDecimal(operand1).subtract(new BigDecimal(operand2))
+                .stripTrailingZeros();
     }
 }
