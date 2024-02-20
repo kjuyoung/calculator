@@ -1,3 +1,7 @@
+import arithmetic.Addition;
+import arithmetic.Division;
+import arithmetic.Multiplication;
+import arithmetic.Subtraction;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

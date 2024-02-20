@@ -13,7 +13,6 @@ public class Main {
 
         BigDecimal operand1 = new BigDecimal(inputs[0]);
         BigDecimal operand2 = new BigDecimal(inputs[2]);
-
         String operation = inputs[1].trim();
 
         BigDecimal result = calculator.calculate(operand1, operation, operand2);

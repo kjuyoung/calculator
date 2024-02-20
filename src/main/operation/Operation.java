@@ -1,3 +1,5 @@
+package operation;
+
 import java.math.BigDecimal;
 
 public interface Operation {

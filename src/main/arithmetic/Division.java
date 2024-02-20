@@ -1,7 +1,12 @@
+package arithmetic;
+
+
+import operation.Operation;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 
-public class Division implements Operation{
+public class Division implements Operation {
 
     @Override
     public BigDecimal calculate(BigDecimal operand1, BigDecimal operand2) {
